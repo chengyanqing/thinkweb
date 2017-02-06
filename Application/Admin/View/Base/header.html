@@ -3,8 +3,8 @@
     <div class="navbar-inner">
         <div class="container-fluid">
             <!-- BEGIN LOGO -->
-            <a class="brand" href="index.html" style="padding:10px;">
-                前台商城
+            <a class="brand" href="javascript:void(0);" style="padding:10px;color:white">
+                燕青内容管理系统
             </a>
             <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
                 <img src="ADMIN_IMG_URL/menu-toggler.png" alt="" />
@@ -12,11 +12,10 @@
             <div class="navbar hor-menu hidden-phone hidden-tablet" style="margin-left: -20px;">
                 <div class="navbar-inner">
                     <ul class="nav">
-                        <li class="active"><a href="{:U('Main/index')}">系统首页<span class="selected"></span></a></li>
-                        <li><a href="javaScript:void(0);">内容管理</a><span></span></li>
-                        <li><a href="javaScript:void(0);">移动内容</a><span></span></li>
-                        <li><a href="javaScript:void(0);">页面</a><span></span></li>
-                        <li><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">全媒体库<span class="arrow"></span></a>
+                        <volist name="menu_1" id="nav" key="k">
+                            <li <if condition='$k eq 1'>class="active"</if>><a href="{:U($nav['url'])}">{$nav.name}<span class="selected"></span></a></li>
+                        </volist>
+<!--                        <li><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">全媒体库<span class="arrow"></span></a>
                             <ul style="min-width:110px;" class="dropdown-menu">
                                 <li><a href="javaScript:void(0);">一键抓取规则管理</a></li>
                                 <li><a href="javaScript:void(0);">图片库</a></li>
@@ -29,8 +28,8 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
-                        <li><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">APP管理<span class="arrow"></span></a>
+                        </li>-->
+<!--                        <li><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">APP管理<span class="arrow"></span></a>
                             <ul style="min-width:110px;" class="dropdown-menu">
                                 <li><a href="javaScript:void(0);">版本更新</a></li>
                                 <li><a href="javaScript:void(0);">评论管理</a></li>
@@ -65,34 +64,34 @@
                                 <li class="dropdown-submenu"><a tabindex="-1" href="javascript:;">会员管理<span class="arrow"></span></a>
                                     <ul style="min-width:110px;" class="dropdown-menu">
                                         <li><a tabindex="-1" href="javaScript:void(0);">会员等级</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d50a21ef70150a6ff40860015','memberController.do?member')">会员</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d50a21ef70150a6ff40860015','memberMngAction.do?list')">会员部门</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d50a21ef70150a6ff40860015','departChannelAction.do?setDefault')">默认权限设置</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d50a21ef70150a6ff40860015','departChannelAction.do?list')">会员权限</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">会员</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">会员部门</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">默认权限设置</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">会员权限</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-submenu"><a tabindex="-1" href="javascript:;">政务功能<span class="arrow"></span></a>
                                     <ul style="min-width:110px;" class="dropdown-menu">
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d56ea426b0156fd30be290001','complaintsReportController.do?complaintsReport')">投诉举报</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d56ea426b0156fd30be290001','emailAddressController.do?emailAddress')">信访信箱</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d56ea426b0156fd30be290001','webErrorController.do?webError')">网站纠错</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d56ea426b0156fd30be290001','businessConsultingController.do?businessConsulting')">业务咨询</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=297ebc2d56ea426b0156fd30be290001','applyPublicController.do?applyPublic')">依申请公开</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">投诉举报</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">信访信箱</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">网站纠错</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">业务咨询</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">依申请公开</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown-submenu"><a tabindex="-1" href="javascript:;">统计管理<span class="arrow"></span></a>
                                     <ul style="min-width:110px;" class="dropdown-menu">
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881834e2016fd014e201c64870011','contentStatisticController.do?toQuery')">内容统计</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881834e2016fd014e201c64870011','statisticsController.do?messagesStatistics')">留言统计</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881834e2016fd014e201c64870011','contentStatisticsController.do?contentCatTree')">栏目统计</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881834e2016fd014e201c64870011','personnelStatisticsController.do?deptTree')">人员统计</a></li>
-                                        <li><a tabindex="-1" href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881834e2016fd014e201c64870011','statisticsController.do?memberStatistics')">会员统计</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">内容统计</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">留言统计</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">栏目统计</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">人员统计</a></li>
+                                        <li><a tabindex="-1" href="javaScript:void(0);">会员统计</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881ea452582c101452583a4900018','workFlowController.do?workFlow')">审核流程</a></li>
-                                <li><a href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881ea452582c101452583a4900018','messagesController.do?messageslist')">公众留言</a></li>
-                                <li><a href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881ea452582c101452583a4900018','wapconfigController.do?update')">wap设置</a></li>
-                                <li><a href="javaScript:void(0);" onclick="horizantal('loginAction.do?LeftMenu&amp;topid=402881ea452582c101452583a4900018','simplespecialController.do?simplespecial')">专题管理</a></li>
+                                <li><a href="javaScript:void(0);">审核流程</a></li>
+                                <li><a href="javaScript:void(0);">公众留言</a></li>
+                                <li><a href="javaScript:void(0);">wap设置</a></li>
+                                <li><a href="javaScript:void(0);">专题管理</a></li>
                             </ul>
                         </li>
                         <li><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">系统管理<span class="arrow"></span></a>
@@ -111,10 +110,10 @@
                                 <li><a href="javaScript:void(0);">数据字典</a></li>
                                 <li><a href="javaScript:void(0);">站点管理</a></li>
                             </ul>
-                        </li>
-						</ul>
-					</div>
-				</div>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
             <ul class="nav pull-right">
                 <li class="dropdown user">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
