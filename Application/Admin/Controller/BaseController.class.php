@@ -12,6 +12,7 @@ class BaseController extends \Think\Controller{
         $menu_1 = $menuModel->field('name,url,icon,sort')->where(['level'=>1])->select(); // 获取查询一级菜单
         $this->assign('menu_1',$menu_1) ;
         $currentMenuId = $menuModel->where(['controller'=>CONTROLLER_NAME])->getField('id'); // 查询当前点击菜单的id
+        // 点击菜单的分类[一级菜单、二级菜单、三级菜单]
         $menu = $menuModel->field('id,name,url,icon,sort')->where(['pid'=>$currentMenuId])->select();
         for($i=0;$i<count($menu);$i++){
             $menu[$i]['children'] = $menuModel->field('name,url,icon,sort')->where(['pid'=>$menu[$i]['id']])->select();
