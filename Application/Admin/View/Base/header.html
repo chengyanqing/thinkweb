@@ -13,7 +13,7 @@
                 <div class="navbar-inner">
                     <ul class="nav">
                         <volist name="menu_1" id="nav" key="k">
-                            <li <if condition='$k eq 1'>class="active"</if>><a href="{:U($nav['url'])}">{$nav.name}<span class="selected"></span></a></li>
+                            <li <if condition='$k eq 1'>class="active"</if>><a href="{:U($nav['url'])}"><i class="{$nav.icon}"></i>&nbsp;&nbsp;{$nav.name}<span class="selected"></span></a></li>
                         </volist>
 <!--                        <li><a data-toggle="dropdown" class="dropdown-toggle" href="javascript:;">全媒体库<span class="arrow"></span></a>
                             <ul style="min-width:110px;" class="dropdown-menu">
