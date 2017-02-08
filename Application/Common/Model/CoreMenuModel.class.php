@@ -5,8 +5,8 @@ namespace Common\Model ;
  * 创建时间:2017-2-6 13:15:29
  * 创建功能:菜单表模型
  */
-class MenuModel extends \Think\Model{
-    protected $tablePrefix = 'admin_' ;
+class CoreMenuModel extends \Think\Model{
+    protected $tablePrefix = 'core_' ;
     protected $tableName = 'menu' ;
     // 字段信息
     protected $fields = [];

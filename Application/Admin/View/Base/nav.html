@@ -20,7 +20,7 @@
             <if condition='$vo.children neq null'>
                 <ul class="sub-menu">
                     <volist name='vo.children' id='vo1'>
-                        <li><a href="{:U($vo1['url'])}"><i class="{$vo1.icon}"></i>&nbsp;&nbsp;{$vo1.name}</a></li>
+                        <li><a href="{:U($vo1['url'])}"><i class="{$vo1.icon}"></i>&nbsp;{$vo1.name}</a></li>
                     </volist>
                 </ul>
             </if>

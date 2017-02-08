@@ -11,8 +11,10 @@ class UserOneController extends \Appapi\Pub\Response{
      * @return type
      */
     public function getList(){
-        $menuModel = new \Common\Model\MenuModel() ;  // 自定义模型测试接口
-        return $this->success($menuModel->select(1),['message'=>'ok']) ;
+        if(IS_POST){
+            $menuModel = new \Common\Model\MenuModel() ;  // 自定义模型测试接口
+            return $this->success($menuModel->select(1),['message'=>'ok']) ;
+        }
     }
     
     /**
